@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    command: npm start
+    volumes:
+      - .:/usr/app
+      - ./node_modules:/usr/app/node_modules
+    depends_on:
+      - "mongo"
+    environment:
+      - MONGO_URL=mongodb://admin:password123@mongo:27017/music-app?authSource=admin
+  mongo:
+    image: mongo:4.2.3-bionic
+    restart: unless-stopped
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=password123
+    # volumes:
+    #   - dbdata:/data/db

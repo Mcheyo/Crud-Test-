@@ -1,0 +1,16 @@
+{
+  "name": "music-app",
+  "version": "1.0.0",
+  "description": "NodeJS, MongoDB (with Mongoose), and Docker",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^5.8.11",
+    "nodemon": "^2.0.2"
+  }
+}
